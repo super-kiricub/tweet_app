@@ -1,1 +1,59 @@
 @import "bootstrap";
+@import "/home";
+$hf-color: #f8f4e6;
+$font: '游ゴシック体';
+$menu-color: #000000;
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: $font;
+}
+
+header {
+  width: 100%;
+  padding: 30px 4% 10px;
+  background-color: $hf-color;
+  display: flex;
+  align-items: center;
+    .app-title {
+      a {
+        color: lighten($menu-color, 50%);
+        font-size: 2rem;
+        text-decoration: none;
+        &:hover{
+          color: inherit;
+          text-decoration: inherit;
+        }
+      }
+    }
+  ul {
+  list-style: none;
+  margin-left: auto;
+  display: flex;
+    li {
+      margin-right: 15px;
+      a {
+        color: lighten($menu-color, 50%);
+        font-size: 2rem;
+        text-decoration: none;
+        &:hover{
+          color: inherit;
+          text-decoration: inherit;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  padding: 30px 4% 10px;
+  background: $hf-color;
+  margin-top: auto;
+  text-align: center;
+  color: lighten($menu-color, 50%);
+  font-size: 1rem;
+}

@@ -1,0 +1,32 @@
+$f-color: #FFFFFF;
+
+.int-wrapper{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  .int{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+    font-size: 3rem;
+    color: $f-color;
+    }
+    p {
+    font-size: 1rem;
+    color: $f-color;
+    }
+  }
+}

@@ -12,10 +12,10 @@ table.table.table-hover
       td= simple_format(h(@post.content), {}, sanitize: false, wrapper_tag: "div")
     tr
       th= Post.human_attribute_name(:created_at)
-      td= @post.created_at
+      td= @post.created_at.to_s(:datetime_jp)
     tr
       th= Post.human_attribute_name(:updated_at)
-      td= @post.updated_at
+      td= @post.updated_at.to_s(:datetime_jp)
 
 = link_to '編集', edit_post_path, class: 'btn btn-primary mr-3'
 = link_to '削除', @post, method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"},

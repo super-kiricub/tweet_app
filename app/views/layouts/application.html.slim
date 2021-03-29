@@ -8,9 +8,18 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .app-title.navbar-expand-md.navbar-light.bg-light
-      .navar-brand Tweet_app
+    header
+      .app-title
+        a =link_to 'Tweet_app', top_path
+      ul
+        li
+          a =link_to 'See', posts_path
+        li
+          a =link_to 'Post', new_post_path
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
       = yield
+    footer
+      .fwrapper
+        p ©︎Super-Kiricub

@@ -13,7 +13,7 @@ ja:
       post:
         id: ID
         content: 投稿内容
-        created_at: 登録日時
+        created_at: 投稿日時
         updated_at: 更新日時
   date:
     abbr_day_names:

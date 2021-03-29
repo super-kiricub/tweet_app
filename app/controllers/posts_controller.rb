@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts =Post.all
+    @posts =Post.all.page(params[:page])
   end
 
   def show
@@ -16,9 +16,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update!(post_params)
-    redirect_to posts_url, notice: "投稿を更新しました。"
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post, notice: "「#{@post.content}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -28,9 +32,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(post_params)
-    post.save!
-    redirect_to posts_url, notice: "「#{post.content}」を投稿しました。"
+    @post = Post.new(post_params)
+
+    if @post.save
+      redirect_to @post, notice: "「#{@post.content}」を投稿しました。"
+    else
+      render :new
+    end
   end
 
   private
